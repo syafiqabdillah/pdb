@@ -8,13 +8,16 @@ import os
 from pandas import pandas as pd
 import pymongo
 
+# Initiate Flask App
 app = Flask(__name__)
 CORS(app)
 
+# Initiate Connection with MongoDB
 mongo_client = pymongo.MongoClient("mongodb://localhost:27017/")
 mongo_db = mongo_client['fighter_details']
 mongo_coll = mongo_db['fighters']
 
+# Initiate Connection with Drill
 drill = PyDrill(host='localhost', port=8047)
 
 list_name = []
